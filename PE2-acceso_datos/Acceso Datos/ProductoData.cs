@@ -18,16 +18,15 @@ namespace PE2_acceso_datos.Acceso_Datos
 
         public static void RegistrarProducto(Producto prod)
         {
-            string consulta = "INSERT INTO Producto (IdProducto, Descripciones, Costo, PrecioVenta, Stock, IdUsuario) " +
-                "VALUES (@IdProducto, @Descripciones, @Costo, @PrecioVenta, @Stock, @IdUsuario) ";
+            string consulta = "INSERT INTO Producto (Descripciones, Costo, PrecioVenta, Stock, IdUsuario) " +
+                "VALUES ( @Descripciones, @Costo, @PrecioVenta, @Stock, @IdUsuario) ";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
                 {
                     conexion.Open();
                     using (SqlCommand com = new SqlCommand(consulta, conexion))
-                    {
-                        com.Parameters.Add(new SqlParameter("IdProducto", SqlDbType.BigInt) { Value = prod.IdProducto });
+                    {                       
                         com.Parameters.Add(new SqlParameter("Descripciones", SqlDbType.VarChar) { Value = prod.Descripcion});
                         com.Parameters.Add(new SqlParameter("Costo", SqlDbType.Decimal) { Value = prod.Costo });
                         com.Parameters.Add(new SqlParameter("PrecioVenta", SqlDbType.Decimal) { Value = prod.PrecioVenta });
@@ -128,7 +127,7 @@ namespace PE2_acceso_datos.Acceso_Datos
                                     Producto prod = new Producto();
 
                                     prod.IdProducto = dr["IdProducto"] is DBNull ? 0 : Convert.ToInt32(dr["IdProducto"]);
-                                    prod.Descripcion = dr["Descripcion"] is DBNull ? "" : dr["Descripcion"].ToString();
+                                    prod.Descripcion = dr["Descripciones"] is DBNull ? "" : dr["Descripciones"].ToString();
                                     prod.Costo = dr["Costo"] is DBNull ? 0 : Convert.ToDecimal(dr["Costo"]);
                                     prod.PrecioVenta = dr["PrecioVenta"] is DBNull ? 0 : Convert.ToDecimal(dr["PrecioVenta"]);
                                     prod.Stock = dr["Stock"] is DBNull ? 0 : Convert.ToInt32(dr["Stock"]);
@@ -179,7 +178,7 @@ namespace PE2_acceso_datos.Acceso_Datos
                                 if (dr.Read())
                                 {
                                     prod.IdProducto = dr["IdProducto"] is DBNull ? 0 : Convert.ToInt32(dr["IdProducto"]);
-                                    prod.Descripcion = dr["Descripcion"] is DBNull ? "" : dr["Descripcion"].ToString();
+                                    prod.Descripcion = dr["Descripciones"] is DBNull ? "" : dr["Descripciones"].ToString();
                                     prod.Costo = dr["Costo"] is DBNull ? 0 : Convert.ToInt32(dr["Costo"]);
                                     prod.PrecioVenta = dr["PrecioVenta"] is DBNull ? 0 : Convert.ToDecimal(dr["PrecioVenta"]);
                                     prod.Stock = dr["Stock"] is DBNull ? 0 : Convert.ToInt32(dr["Stock"]);

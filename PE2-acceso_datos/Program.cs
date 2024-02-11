@@ -13,7 +13,7 @@ namespace PE2_acceso_datos
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Usuario_ABM());
+            Application.Run(new Login_Usuarios_frm());
         }
     }
 }

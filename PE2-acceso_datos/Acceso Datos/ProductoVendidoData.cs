@@ -15,8 +15,8 @@ namespace PE2_acceso_datos.Acceso_Datos
 
         public static void RegistrarProductoVendido(ProductoVendido prod)
         {
-            string consulta = "INSERT INTO ProductoVendido (IdProductoVendido, Stock, IdProducto, IdVenta) " +
-                "VALUES (@IdProductoVendido, @Stock, @IdProducto, @IdVenta) ";
+            string consulta = "INSERT INTO ProductoVendido ( Stock, IdProducto, IdVenta) " +
+                "VALUES (@Stock, @IdProducto, @IdVenta) ";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
@@ -24,7 +24,7 @@ namespace PE2_acceso_datos.Acceso_Datos
                     conexion.Open();
                     using (SqlCommand com = new SqlCommand(consulta, conexion))
                     {
-                        com.Parameters.Add(new SqlParameter("IdProductoVendido", SqlDbType.BigInt) { Value = prod.IdProductoVendido });
+                        
                         com.Parameters.Add(new SqlParameter("Stock", SqlDbType.Int) { Value = prod.Stock });
                         com.Parameters.Add(new SqlParameter("IdProducto", SqlDbType.BigInt) { Value = prod.IdProducto });
                         com.Parameters.Add(new SqlParameter("IdVenta", SqlDbType.BigInt) { Value = prod.IdVenta });
@@ -45,7 +45,7 @@ namespace PE2_acceso_datos.Acceso_Datos
             string consulta = "UPDATE ProductoVendido SET " +
                 "Stock = @Stock, " +
                 "IdProducto = @IdProducto, " +
-                "IdVenta = @IdVenta, " +
+                "IdVenta = @IdVenta " +
                 "WHERE IdProductoVendido = @IdProductoVendido ";
             try
             {
@@ -99,7 +99,7 @@ namespace PE2_acceso_datos.Acceso_Datos
             string consulta = "SELECT IdProductoVendido, " +
                                      "Stock, " +
                                      "IdProducto, " +
-                                     "IdVenta, " +
+                                     "IdVenta " +
                                 "FROM ProductoVendido ";
             try
             {
@@ -146,7 +146,7 @@ namespace PE2_acceso_datos.Acceso_Datos
             string consulta = "SELECT IdProductoVendido, " +
                                      "Stock, " +
                                      "IdProducto, " +
-                                     "IdVenta, " +
+                                     "IdVenta " +
                                 "FROM ProductoVendido " +
                                "WHERE IdProductoVendido = @IdProductoVendido ";
             try

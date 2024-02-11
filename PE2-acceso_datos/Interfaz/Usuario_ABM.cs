@@ -271,5 +271,10 @@ namespace PE2_acceso_datos.Interfaz
 
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

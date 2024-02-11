@@ -15,8 +15,8 @@ namespace PE2_acceso_datos.Acceso_Datos
 
         public static void RegistrarVenta(Venta ven)
         {
-            string consulta = "INSERT INTO Venta (IdVenta, Comentarios, IdUsuario) " +
-                "VALUES (@IdVenta, @Comentarios, @IdUsuario) ";
+            string consulta = "INSERT INTO Venta (Comentarios, IdUsuario) " +
+                "VALUES (@Comentarios, @IdUsuario) ";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
@@ -24,7 +24,6 @@ namespace PE2_acceso_datos.Acceso_Datos
                     conexion.Open();
                     using (SqlCommand com = new SqlCommand(consulta, conexion))
                     {
-                        com.Parameters.Add(new SqlParameter("IdVenta", SqlDbType.BigInt) { Value = ven.IdVenta });
                         com.Parameters.Add(new SqlParameter("Comentarios", SqlDbType.VarChar) { Value = ven.Comentarios });
                         com.Parameters.Add(new SqlParameter("IdUsuario", SqlDbType.BigInt) { Value = ven.IdUsuario });
                         com.ExecuteNonQuery();
@@ -43,7 +42,7 @@ namespace PE2_acceso_datos.Acceso_Datos
         {
             string consulta = "UPDATE Venta SET " +
                 "Comentarios = @Comentarios, " +
-                "IdUsuario = @IdUsuario, " +
+                "IdUsuario = @IdUsuario " +
                 "WHERE IdVenta = @IdVenta ";
             try
             {
@@ -95,7 +94,7 @@ namespace PE2_acceso_datos.Acceso_Datos
             List<Venta> lstVenta = new List<Venta>();
             string consulta = "SELECT IdVenta, " +
                                      "Comentarios, " +
-                                     "IdUsuario, " +
+                                     "IdUsuario " +
                                 "FROM Venta ";
             try
             {
@@ -140,7 +139,7 @@ namespace PE2_acceso_datos.Acceso_Datos
 
             string consulta = "SELECT IdVenta, " +
                                      "Comentarios, " +
-                                     "IdUsuario, " +
+                                     "IdUsuario " +
                                 "FROM Venta " +
                                "WHERE IdVenta = @IdVenta ";
             try

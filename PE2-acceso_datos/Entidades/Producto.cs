@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_Ventas.Entidades
 {
-    public class Producto
+    public class Producto   
     {
         private int idProducto;
         private string descripcion;
