@@ -1,5 +1,6 @@
 ﻿using PE2_acceso_datos.Acceso_Datos;
 using Sistema_de_Ventas.Entidades;
+using Sistema_Venta_Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,7 +68,7 @@ namespace PE2_acceso_datos.Interfaz
 
             if (validarTextbox())
             {
-                usu = UsuarioData.Login(usuario, password);
+                usu = UsuarioNegocio.Login(usuario, password);
                 if (usu.IdUsuario != 0)
                 {
                     Menu_Principal_frm menu = new Menu_Principal_frm();

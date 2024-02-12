@@ -1,12 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>PE2_acceso_datos</RootNamespace>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sistema_Ventas_Datos\Sistema_Ventas_Datos.csproj" />
     <ProjectReference Include="..\Sistema_Venta_Entidades\Sistema_Venta_Entidades.csproj" />
-    <ProjectReference Include="..\Sistema_Venta_Negocio\Sistema_Venta_Negocio.csproj" />
   </ItemGroup>
 
 </Project>

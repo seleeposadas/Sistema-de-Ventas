@@ -125,6 +125,7 @@
             dtgProducto.RowTemplate.Height = 57;
             dtgProducto.Size = new Size(1427, 457);
             dtgProducto.TabIndex = 30;
+            dtgProducto.TabStop = false;
             dtgProducto.CellDoubleClick += dtgProducto_CellDoubleClick;
             // 
             // Codigo
@@ -293,7 +294,7 @@
             txtIdUsuario.Name = "txtIdUsuario";
             txtIdUsuario.PlaceholderText = "Ingrese el Codigo del usuario";
             txtIdUsuario.Size = new Size(196, 39);
-            txtIdUsuario.TabIndex = 56;
+            txtIdUsuario.TabIndex = 30;
             txtIdUsuario.KeyPress += txtIdUsuario_KeyPress;
             // 
             // label6

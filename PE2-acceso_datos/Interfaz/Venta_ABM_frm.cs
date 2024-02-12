@@ -1,5 +1,6 @@
 ﻿using PE2_acceso_datos.Acceso_Datos;
 using Sistema_de_Ventas.Entidades;
+using Sistema_Venta_Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -110,7 +111,7 @@ namespace PE2_acceso_datos.Interfaz
             try
             {
                 List<Venta> lstVenta = new List<Venta>();
-                lstVenta = VentaData.PopularVenta();
+                lstVenta = VentaNegocio.PopularVenta();
 
                 dtgVenta.DataSource = lstVenta;
                 this.Refresh();
@@ -139,12 +140,12 @@ namespace PE2_acceso_datos.Interfaz
 
                     if (modoEdicion != true)
                     {
-                        VentaData.RegistrarVenta(ven);
+                        VentaNegocio.RegistrarVenta(ven);
                         MessageBox.Show("La venta se ha registrado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        VentaData.ActualizarVenta(ven);
+                        VentaNegocio.ActualizarVenta(ven);
                         MessageBox.Show("La venta se ha actualizado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     FormatearFormulario();
@@ -174,7 +175,7 @@ namespace PE2_acceso_datos.Interfaz
                 {
                     idVenta = ((Venta)dtgVenta.CurrentRow.DataBoundItem).IdVenta;
                 }
-                Venta _ven = VentaData.ObtenerVentaxId(idVenta);
+                Venta _ven = VentaNegocio.ObtenerVentaxId(idVenta);
 
                 if (_ven != null)
                 {
@@ -182,7 +183,7 @@ namespace PE2_acceso_datos.Interfaz
 
                     if (resultado == DialogResult.Yes)
                     {
-                        VentaData.EliminarVenta(_ven);
+                        VentaNegocio.EliminarVenta(_ven);
                         MessageBox.Show("La Venta " + _ven.IdVenta + " se eliminó correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         FormatearFormulario();

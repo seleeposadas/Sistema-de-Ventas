@@ -1,5 +1,6 @@
 ﻿using PE2_acceso_datos.Acceso_Datos;
 using Sistema_de_Ventas.Entidades;
+using Sistema_Venta_Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,9 +36,9 @@ namespace PE2_acceso_datos.Interfaz
             {
                 txtCodigo.Text = "";
                 txtNombre.Text = "";
-                txtPrecioCompra.Text = "";
-                txtPrecioVenta.Text = "";
-                txtStock.Text = "";
+                txtPrecioCompra.Text = "0";
+                txtPrecioVenta.Text = "0";
+                txtStock.Text = "0";
                 txtIdUsuario.Text = "";
                 PopularProductos();
                 btnNuevo.Enabled = true;
@@ -87,7 +88,7 @@ namespace PE2_acceso_datos.Interfaz
                     txtNombre.Focus();
                 }
 
-                if (txtPrecioCompra.Text == "")
+                if (txtPrecioCompra.Text == "0" || txtPrecioCompra.Text == "")
                 {
                     MessageBox.Show("Debe ingresar el precio de compra del producto", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     correcto = false;
@@ -95,7 +96,7 @@ namespace PE2_acceso_datos.Interfaz
                     txtPrecioCompra.Focus();
                 }
 
-                if (txtPrecioVenta.Text == "")
+                if (txtPrecioVenta.Text == "0" || txtPrecioVenta.Text == "")
                 {
                     MessageBox.Show("Debe ingresar el precio para la venta del producto", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     correcto = false;
@@ -103,10 +104,10 @@ namespace PE2_acceso_datos.Interfaz
                     txtPrecioVenta.Focus();
                 }
 
-                if (txtStock.Text == "")
+                if (txtStock.Text == "0" || txtStock.Text == "")
                 {
 
-                    MessageBox.Show("Debe ingresar la categoria a la cual pertenece el producto", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar la cantidad de stock del producto", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     correcto = false;
                     return correcto;
                     txtStock.Focus();
@@ -152,7 +153,7 @@ namespace PE2_acceso_datos.Interfaz
             try
             {
                 List<Producto> lstProducto = new List<Producto>();
-                lstProducto = ProductoData.PopularProducto();
+                lstProducto = ProductoNegocio.PopularProducto();
 
                 dtgProducto.DataSource = lstProducto;
                 this.Refresh();
@@ -181,12 +182,12 @@ namespace PE2_acceso_datos.Interfaz
 
                     if (modoEdicion == false)
                     {
-                        ProductoData.RegistrarProducto(pro);
+                        ProductoNegocio.RegistrarProducto(pro);
                         MessageBox.Show("El producto se registro correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        ProductoData.ActualizarProducto(pro);
+                        ProductoNegocio.ActualizarProducto(pro);
                         MessageBox.Show("El producto se actualizó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -220,7 +221,7 @@ namespace PE2_acceso_datos.Interfaz
                         idProducto = ((Producto)dtgProducto.CurrentRow.DataBoundItem).IdProducto;
                     }
 
-                    Producto _prod = ProductoData.ObtenerProductoxId(idProducto);
+                    Producto _prod = ProductoNegocio.ObtenerProductoxId(idProducto);
 
                     if (_prod != null)
                     {
@@ -228,7 +229,7 @@ namespace PE2_acceso_datos.Interfaz
 
                         if (resultado == DialogResult.Yes)
                         {
-                            ProductoData.EliminarProducto(_prod);
+                            ProductoNegocio.EliminarProducto(_prod);
                             MessageBox.Show("El Producto " + _prod.IdProducto + " se eliminó correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             FormatearFormulario();

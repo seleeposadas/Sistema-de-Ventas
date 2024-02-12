@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PE2_acceso_datos.Acceso_Datos;
 using Sistema_de_Ventas.Entidades;
+using Sistema_Venta_Negocio;
 
 
 namespace PE2_acceso_datos.Interfaz
@@ -31,7 +32,7 @@ namespace PE2_acceso_datos.Interfaz
         {
             try
             {
-                List<Usuario> listaUsuarios = UsuarioData.PopularUsuarios();
+                List<Usuario> listaUsuarios = UsuarioNegocio.PopularUsuarios();
                 dtgUsuarios.DataSource = listaUsuarios;
                 this.Refresh();
             }
@@ -173,12 +174,12 @@ namespace PE2_acceso_datos.Interfaz
                     LeerTextbox(usu);
                     if (modoEdicion == false)
                     {
-                        UsuarioData.RegistrarUsuario(usu);
+                        UsuarioNegocio.RegistrarUsuario(usu);
                         MessageBox.Show("El usuario se Registró Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        UsuarioData.ActualizarUsuario(usu);
+                        UsuarioNegocio.ActualizarUsuario(usu);
                         MessageBox.Show("El usuario se Modificó Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -206,15 +207,15 @@ namespace PE2_acceso_datos.Interfaz
                         _idusuario = ((Usuario)dtgUsuarios.CurrentRow.DataBoundItem).IdUsuario;
                     }
 
-                    Usuario _usu = UsuarioData.ObtenerUsuarioxId(_idusuario);
+                    Usuario _usu = UsuarioNegocio.ObtenerUsuarioxId(_idusuario);
 
-                    if (usu != null)
+                    if (_usu != null)
                     {
                         DialogResult resultado = MessageBox.Show("¿Confirma Eliminar el Usuario Nro.: " + _usu.IdUsuario + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (resultado == DialogResult.Yes)
                         {
-                            UsuarioData.EliminarUsuario(usu);
+                            UsuarioNegocio.EliminarUsuario(_usu);
                             MessageBox.Show("El Usuario " + _usu.IdUsuario + " se eliminó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             popularUsuarios();

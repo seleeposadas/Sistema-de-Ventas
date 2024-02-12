@@ -1,5 +1,6 @@
 ﻿using PE2_acceso_datos.Acceso_Datos;
 using Sistema_de_Ventas.Entidades;
+using Sistema_Venta_Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace PE2_acceso_datos.Interfaz
         {
             try
             {
-                List<ProductoVendido> listaProdVendidos = ProductoVendidoData.PopularProductoVendido();
+                List<ProductoVendido> listaProdVendidos = ProductoVendidoNegocio.PopularProductoVendido();
                 dtgProductoVendido.DataSource = listaProdVendidos;
                 this.Refresh();
             }
@@ -99,6 +100,7 @@ namespace PE2_acceso_datos.Interfaz
             try
             {
                 txtidproducto.Text = "";
+                txtcodprdVendido.Text = "";
                 txtcantidad.Text = "";
                 txtidventa.Text = "";
                 popularProductosVendidos();
@@ -150,12 +152,12 @@ namespace PE2_acceso_datos.Interfaz
                     LeerTextbox(prodvendido);
                     if (modoEdicion == false)
                     {
-                        ProductoVendidoData.RegistrarProductoVendido(prodvendido);
+                        ProductoVendidoNegocio.RegistrarProductoVendido(prodvendido);
                         MessageBox.Show("El producto se Registró en una Venta Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        ProductoVendidoData.ActualizarProductoVendido(prodvendido);
+                        ProductoVendidoNegocio.ActualizarProductoVendido(prodvendido);
                         MessageBox.Show("El producto se actualizó en una Venta Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -183,7 +185,7 @@ namespace PE2_acceso_datos.Interfaz
                         _idProdVendido = ((ProductoVendido)dtgProductoVendido.CurrentRow.DataBoundItem).IdProductoVendido;
                     }
 
-                    ProductoVendido _prodv = ProductoVendidoData.ObtenerProductoVendioxId(_idProdVendido);
+                    ProductoVendido _prodv = ProductoVendidoNegocio.ObtenerProductoVendioxId(_idProdVendido);
 
                     if (_prodv != null)
                     {
@@ -191,7 +193,7 @@ namespace PE2_acceso_datos.Interfaz
 
                         if (resultado == DialogResult.Yes)
                         {
-                            ProductoVendidoData.EliminarProducto(_prodv);
+                            ProductoVendidoNegocio.EliminarProducto(_prodv);
                             MessageBox.Show("El Producto " + _prodv.IdProductoVendido + " se eliminó correctamente de la venta Nro: " + _prodv.IdVenta, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             popularProductosVendidos();
