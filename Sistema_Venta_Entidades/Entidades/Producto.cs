@@ -14,8 +14,9 @@ namespace Sistema_de_Ventas.Entidades
         private decimal precioVenta;
         private int stock;
         private int idUsuario;
+        private string nombreUsuario;
 
-        public Producto(int idProducto, string descripcion, decimal costo, decimal precioVenta, int stock, int idUsuario)
+        public Producto(int idProducto, string descripcion, decimal costo, decimal precioVenta, int stock, int idUsuario, string nombreUsuario)
         {
 
             this.idProducto = idProducto;
@@ -24,6 +25,8 @@ namespace Sistema_de_Ventas.Entidades
             this.precioVenta = precioVenta;
             this.stock = stock;
             this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+
         }
 
         public Producto()
@@ -37,6 +40,8 @@ namespace Sistema_de_Ventas.Entidades
         public decimal PrecioVenta { get { return precioVenta; } set { precioVenta = value; } }
         public int Stock { get { return stock; } set { stock = value; } }
         public int IdUsuario { get { return idUsuario; } set { idUsuario = value; } }
+
+        public string NombreUsuario { get { return nombreUsuario; } set { nombreUsuario = value; } }
 
     }
 }

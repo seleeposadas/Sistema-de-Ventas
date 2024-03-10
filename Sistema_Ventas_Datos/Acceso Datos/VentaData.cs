@@ -92,10 +92,11 @@ namespace PE2_acceso_datos.Acceso_Datos
         public static List<Venta> PopularVenta()
         {
             List<Venta> lstVenta = new List<Venta>();
-            string consulta = "SELECT IdVenta, " +
-                                     "Comentarios, " +
-                                     "IdUsuario " +
-                                "FROM Venta ";
+            string consulta = "SELECT v.IdVenta, " +
+                                     "v.Comentarios, " +
+                                     "v.IdUsuario, " +
+                                     "u.Nombre + ' ' + u.Apellido AS nombre " +
+                                "FROM Venta v JOIN Usuario u ON v.IdUsuario = u.IdUsuario ";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
@@ -114,6 +115,7 @@ namespace PE2_acceso_datos.Acceso_Datos
                                     ven.IdVenta = dr["IdVenta"] is DBNull ? 0 : Convert.ToInt32(dr["IdVenta"]);
                                     ven.Comentarios = dr["Comentarios"] is DBNull ? "" : dr["Comentarios"].ToString();
                                     ven.IdUsuario = dr["IdUsuario"] is DBNull ? 0 : Convert.ToInt32(dr["IdUsuario"]);
+                                    ven.NombreUsuario = dr["nombre"] is DBNull ? "" : dr["nombre"].ToString();
 
                                     lstVenta.Add(ven);
                                 }

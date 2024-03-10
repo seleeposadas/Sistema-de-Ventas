@@ -104,13 +104,8 @@ namespace PE2_acceso_datos.Acceso_Datos
         public static List<Producto> PopularProducto()
         {
             List<Producto> lstProd = new List<Producto>();
-            string consulta = "SELECT IdProducto, " +
-                                     "Descripciones, " +
-                                     "Costo, " +
-                                     "PrecioVenta, " +
-                                     "Stock, " +
-                                     "IdUsuario " +
-                                "FROM producto ";
+            string consulta = "SELECT p.IdProducto, p.Descripciones, p.Costo, p.PrecioVenta, p.Stock, p.IdUsuario, u.Nombre + ' ' + u.Apellido AS nombre " +
+                  "FROM producto p JOIN Usuario u ON p.IdUsuario = u.IdUsuario";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
@@ -132,6 +127,7 @@ namespace PE2_acceso_datos.Acceso_Datos
                                     prod.PrecioVenta = dr["PrecioVenta"] is DBNull ? 0 : Convert.ToDecimal(dr["PrecioVenta"]);
                                     prod.Stock = dr["Stock"] is DBNull ? 0 : Convert.ToInt32(dr["Stock"]);
                                     prod.IdUsuario = dr["IdUsuario"] is DBNull ? 0 : Convert.ToInt32(dr["IdUsuario"]);
+                                    prod.NombreUsuario = dr["nombre"] is DBNull ? "" : dr["nombre"].ToString();
 
                                     lstProd.Add(prod);
                                 }

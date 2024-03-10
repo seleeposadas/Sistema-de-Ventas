@@ -38,9 +38,10 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(250, 536);
+            btnIngresar.Location = new Point(135, 251);
+            btnIngresar.Margin = new Padding(2, 1, 2, 1);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(150, 46);
+            btnIngresar.Size = new Size(81, 22);
             btnIngresar.TabIndex = 0;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(501, 665);
+            btnSalir.Location = new Point(249, 307);
+            btnSalir.Margin = new Padding(2, 1, 2, 1);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(150, 46);
+            btnSalir.Size = new Size(81, 22);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
@@ -60,48 +62,53 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 10.125F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(50, 132);
+            label1.Location = new Point(27, 62);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(103, 33);
+            label1.Size = new Size(54, 17);
             label1.TabIndex = 2;
             label1.Text = "Usuario";
             // 
             // txtusuario
             // 
-            txtusuario.Location = new Point(50, 185);
+            txtusuario.Location = new Point(27, 87);
+            txtusuario.Margin = new Padding(2, 1, 2, 1);
             txtusuario.Name = "txtusuario";
-            txtusuario.Size = new Size(559, 39);
+            txtusuario.Size = new Size(303, 23);
             txtusuario.TabIndex = 3;
             // 
             // txtcontrasenia
             // 
-            txtcontrasenia.Location = new Point(50, 315);
+            txtcontrasenia.Location = new Point(27, 148);
+            txtcontrasenia.Margin = new Padding(2, 1, 2, 1);
             txtcontrasenia.Name = "txtcontrasenia";
             txtcontrasenia.PasswordChar = '*';
-            txtcontrasenia.Size = new Size(559, 39);
+            txtcontrasenia.Size = new Size(303, 23);
             txtcontrasenia.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 10.125F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(50, 262);
+            label2.Location = new Point(27, 123);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(141, 33);
+            label2.Size = new Size(76, 17);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
             // Login_Usuarios_frm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 745);
+            ClientSize = new Size(355, 349);
             Controls.Add(txtcontrasenia);
             Controls.Add(label2);
             Controls.Add(txtusuario);
             Controls.Add(label1);
             Controls.Add(btnSalir);
             Controls.Add(btnIngresar);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Login_Usuarios_frm";
             Text = "Inicio Sesion";
             Load += Login_Usuarios_frm_Load;

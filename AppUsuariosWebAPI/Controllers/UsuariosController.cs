@@ -33,5 +33,6 @@ namespace AppUsuariosWebAPI.Controllers
         {
             UsuarioNegocio.RegistrarUsuario(usu);
         }
+
     }
 }

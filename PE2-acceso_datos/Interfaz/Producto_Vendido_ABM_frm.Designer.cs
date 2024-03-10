@@ -41,20 +41,21 @@
             txtcodprdVendido = new TextBox();
             label1 = new Label();
             dtgProductoVendido = new DataGridView();
-            btnSalir = new Button();
             idprodvendido = new DataGridViewTextBoxColumn();
             idproducto = new DataGridViewTextBoxColumn();
+            descripcion = new DataGridViewTextBoxColumn();
             cantidad = new DataGridViewTextBoxColumn();
             idventa = new DataGridViewTextBoxColumn();
+            comentario = new DataGridViewTextBoxColumn();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgProductoVendido).BeginInit();
             SuspendLayout();
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(102, 872);
-            btnNuevo.Margin = new Padding(6);
+            btnNuevo.Location = new Point(55, 409);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(139, 49);
+            btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 20;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -62,10 +63,9 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(732, 872);
-            btnCancelar.Margin = new Padding(6);
+            btnCancelar.Location = new Point(394, 409);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(139, 49);
+            btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 35;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -73,10 +73,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(522, 872);
-            btnEliminar.Margin = new Padding(6);
+            btnEliminar.Location = new Point(281, 409);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(139, 49);
+            btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 30;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -84,10 +83,9 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(312, 872);
-            btnGuardar.Margin = new Padding(6);
+            btnGuardar.Location = new Point(168, 409);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(139, 49);
+            btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 25;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -95,78 +93,70 @@
             // 
             // txtidventa
             // 
-            txtidventa.Location = new Point(790, 121);
-            txtidventa.Margin = new Padding(6);
+            txtidventa.Location = new Point(425, 57);
             txtidventa.Name = "txtidventa";
-            txtidventa.Size = new Size(182, 39);
+            txtidventa.Size = new Size(100, 23);
             txtidventa.TabIndex = 15;
             // 
             // lblusername
             // 
             lblusername.AutoSize = true;
             lblusername.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblusername.Location = new Point(790, 83);
-            lblusername.Margin = new Padding(6, 0, 6, 0);
+            lblusername.Location = new Point(425, 39);
             lblusername.Name = "lblusername";
-            lblusername.Size = new Size(137, 32);
+            lblusername.Size = new Size(66, 15);
             lblusername.TabIndex = 52;
             lblusername.Text = "Cod. Venta";
             // 
             // txtcantidad
             // 
-            txtcantidad.Location = new Point(580, 121);
-            txtcantidad.Margin = new Padding(6);
+            txtcantidad.Location = new Point(312, 57);
             txtcantidad.Name = "txtcantidad";
-            txtcantidad.Size = new Size(182, 39);
+            txtcantidad.Size = new Size(100, 23);
             txtcantidad.TabIndex = 10;
             // 
             // lblapellido
             // 
             lblapellido.AutoSize = true;
             lblapellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblapellido.Location = new Point(580, 83);
-            lblapellido.Margin = new Padding(6, 0, 6, 0);
+            lblapellido.Location = new Point(312, 39);
             lblapellido.Name = "lblapellido";
-            lblapellido.Size = new Size(116, 32);
+            lblapellido.Size = new Size(55, 15);
             lblapellido.TabIndex = 51;
             lblapellido.Text = "Cantidad";
             // 
             // txtidproducto
             // 
-            txtidproducto.Location = new Point(368, 121);
-            txtidproducto.Margin = new Padding(6);
+            txtidproducto.Location = new Point(198, 57);
             txtidproducto.Name = "txtidproducto";
-            txtidproducto.Size = new Size(182, 39);
+            txtidproducto.Size = new Size(100, 23);
             txtidproducto.TabIndex = 5;
             // 
             // lblnombre
             // 
             lblnombre.AutoSize = true;
             lblnombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblnombre.Location = new Point(368, 83);
-            lblnombre.Margin = new Padding(6, 0, 6, 0);
+            lblnombre.Location = new Point(198, 39);
             lblnombre.Name = "lblnombre";
-            lblnombre.Size = new Size(179, 32);
+            lblnombre.Size = new Size(85, 15);
             lblnombre.TabIndex = 49;
             lblnombre.Text = "Cod. Producto";
             // 
             // txtcodprdVendido
             // 
-            txtcodprdVendido.Location = new Point(100, 121);
-            txtcodprdVendido.Margin = new Padding(6);
+            txtcodprdVendido.Location = new Point(54, 57);
             txtcodprdVendido.Name = "txtcodprdVendido";
             txtcodprdVendido.ReadOnly = true;
-            txtcodprdVendido.Size = new Size(236, 39);
+            txtcodprdVendido.Size = new Size(129, 23);
             txtcodprdVendido.TabIndex = 47;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(100, 83);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(54, 39);
             label1.Name = "label1";
-            label1.Size = new Size(236, 32);
+            label1.Size = new Size(111, 15);
             label1.TabIndex = 48;
             label1.Text = "Cod. Prod. Vendido";
             // 
@@ -175,29 +165,17 @@
             dtgProductoVendido.AllowUserToAddRows = false;
             dtgProductoVendido.AllowUserToDeleteRows = false;
             dtgProductoVendido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgProductoVendido.Columns.AddRange(new DataGridViewColumn[] { idprodvendido, idproducto, cantidad, idventa });
-            dtgProductoVendido.Location = new Point(100, 238);
-            dtgProductoVendido.Margin = new Padding(6);
+            dtgProductoVendido.Columns.AddRange(new DataGridViewColumn[] { idprodvendido, idproducto, descripcion, cantidad, idventa, comentario });
+            dtgProductoVendido.Location = new Point(54, 112);
             dtgProductoVendido.Name = "dtgProductoVendido";
             dtgProductoVendido.ReadOnly = true;
             dtgProductoVendido.RowHeadersVisible = false;
             dtgProductoVendido.RowHeadersWidth = 82;
             dtgProductoVendido.RowTemplate.Height = 25;
-            dtgProductoVendido.Size = new Size(1235, 542);
+            dtgProductoVendido.Size = new Size(665, 254);
             dtgProductoVendido.TabIndex = 46;
             dtgProductoVendido.TabStop = false;
             dtgProductoVendido.CellDoubleClick += dtgProductoVendido_CellDoubleClick;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(1196, 872);
-            btnSalir.Margin = new Padding(6);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(139, 49);
-            btnSalir.TabIndex = 53;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // idprodvendido
             // 
@@ -217,6 +195,13 @@
             idproducto.ReadOnly = true;
             idproducto.Width = 200;
             // 
+            // descripcion
+            // 
+            descripcion.DataPropertyName = "Descripcion";
+            descripcion.HeaderText = "Denominacion";
+            descripcion.Name = "descripcion";
+            descripcion.ReadOnly = true;
+            // 
             // cantidad
             // 
             cantidad.DataPropertyName = "Stock";
@@ -235,11 +220,28 @@
             idventa.ReadOnly = true;
             idventa.Width = 200;
             // 
+            // comentario
+            // 
+            comentario.DataPropertyName = "Comentario";
+            comentario.HeaderText = "Comentario";
+            comentario.Name = "comentario";
+            comentario.ReadOnly = true;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(644, 409);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 53;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // Producto_Vendido_ABM_frm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1434, 1005);
+            ClientSize = new Size(772, 439);
             Controls.Add(btnSalir);
             Controls.Add(btnNuevo);
             Controls.Add(btnCancelar);
@@ -254,6 +256,7 @@
             Controls.Add(txtcodprdVendido);
             Controls.Add(label1);
             Controls.Add(dtgProductoVendido);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Producto_Vendido_ABM_frm";
             Text = "Producto Vendido";
             Load += Producto_Vendido_ABM_frm_Load;
@@ -284,7 +287,9 @@
         private Button btnSalir;
         private DataGridViewTextBoxColumn idprodvendido;
         private DataGridViewTextBoxColumn idproducto;
+        private DataGridViewTextBoxColumn descripcion;
         private DataGridViewTextBoxColumn cantidad;
         private DataGridViewTextBoxColumn idventa;
+        private DataGridViewTextBoxColumn comentario;
     }
 }

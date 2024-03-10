@@ -96,11 +96,17 @@ namespace PE2_acceso_datos.Acceso_Datos
         public static List<ProductoVendido> PopularProductoVendido()
         {
             List<ProductoVendido> lstProdVendido = new List<ProductoVendido>();
-            string consulta = "SELECT IdProductoVendido, " +
-                                     "Stock, " +
-                                     "IdProducto, " +
-                                     "IdVenta " +
-                                "FROM ProductoVendido ";
+            string consulta = @"SELECT pv.IdProductoVendido,
+                                       pv.Stock, 
+                                       pv.IdProducto,
+	                                   p.Descripciones,
+                                       pv.IdVenta,
+	                                   v.Comentarios
+                                  FROM ProductoVendido pv
+                                  LEFT JOIN producto p
+                                    ON pv.IdProducto = p.IdProducto
+                                  LEFT JOIN venta v
+                                    ON pv.IdVenta = v.IdVenta";
             try
             {
                 using (SqlConnection conexion = new SqlConnection(connectionstring))
@@ -119,7 +125,9 @@ namespace PE2_acceso_datos.Acceso_Datos
                                     prod.IdProductoVendido = dr["IdProductoVendido"] is DBNull ? 0 : Convert.ToInt32(dr["IdProductoVendido"]);
                                     prod.Stock = dr["Stock"] is DBNull ? 0 : Convert.ToInt32(dr["Stock"]);
                                     prod.IdProducto = dr["IdProducto"] is DBNull ? 0 : Convert.ToInt32(dr["IdProducto"]);
-                                    prod.IdVenta = dr["IdVenta"] is DBNull ? 0 : Convert.ToInt32(dr["IdVenta"]);
+                                    prod.Descripcion = dr["Descripciones"] is DBNull ? "" : dr["Descripciones"].ToString();
+                                    prod.IdVenta = dr["IdVenta"] is DBNull ? 0 : Convert.ToInt32(dr["IdVenta"]); 
+                                    prod.Comentario = dr["Comentarios"] is DBNull ? "" : dr["Comentarios"].ToString();
 
                                     lstProdVendido.Add(prod);
                                 }

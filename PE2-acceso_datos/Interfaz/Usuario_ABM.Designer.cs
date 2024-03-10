@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             dtgUsuarios = new DataGridView();
+            IdUsuario = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            NombreUsuario = new DataGridViewTextBoxColumn();
+            Contrasenia = new DataGridViewTextBoxColumn();
+            mail = new DataGridViewTextBoxColumn();
             label1 = new Label();
             txtcodusuario = new TextBox();
             txtnombre = new TextBox();
@@ -46,12 +52,6 @@
             btnCancelar = new Button();
             btnNuevo = new Button();
             btnSalir = new Button();
-            IdUsuario = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            NombreUsuario = new DataGridViewTextBoxColumn();
-            Contrasenia = new DataGridViewTextBoxColumn();
-            mail = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtgUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -61,187 +61,16 @@
             dtgUsuarios.AllowUserToDeleteRows = false;
             dtgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgUsuarios.Columns.AddRange(new DataGridViewColumn[] { IdUsuario, Nombre, Apellido, NombreUsuario, Contrasenia, mail });
-            dtgUsuarios.Location = new Point(22, 196);
-            dtgUsuarios.Margin = new Padding(6);
+            dtgUsuarios.Location = new Point(12, 92);
             dtgUsuarios.Name = "dtgUsuarios";
             dtgUsuarios.ReadOnly = true;
             dtgUsuarios.RowHeadersVisible = false;
             dtgUsuarios.RowHeadersWidth = 82;
             dtgUsuarios.RowTemplate.Height = 25;
-            dtgUsuarios.Size = new Size(1235, 542);
+            dtgUsuarios.Size = new Size(665, 254);
             dtgUsuarios.TabIndex = 0;
             dtgUsuarios.TabStop = false;
             dtgUsuarios.CellDoubleClick += dtgUsuarios_CellDoubleClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(22, 41);
-            label1.Margin = new Padding(6, 0, 6, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(161, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Cod. Usuario";
-            // 
-            // txtcodusuario
-            // 
-            txtcodusuario.Location = new Point(22, 79);
-            txtcodusuario.Margin = new Padding(6);
-            txtcodusuario.Name = "txtcodusuario";
-            txtcodusuario.ReadOnly = true;
-            txtcodusuario.Size = new Size(182, 39);
-            txtcodusuario.TabIndex = 0;
-            // 
-            // txtnombre
-            // 
-            txtnombre.Location = new Point(232, 79);
-            txtnombre.Margin = new Padding(6);
-            txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(182, 39);
-            txtnombre.TabIndex = 5;
-            // 
-            // lblnombre
-            // 
-            lblnombre.AutoSize = true;
-            lblnombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblnombre.Location = new Point(232, 41);
-            lblnombre.Margin = new Padding(6, 0, 6, 0);
-            lblnombre.Name = "lblnombre";
-            lblnombre.Size = new Size(203, 32);
-            lblnombre.TabIndex = 3;
-            lblnombre.Text = "Nombre Usuario";
-            // 
-            // txtUsuarioLogin
-            // 
-            txtUsuarioLogin.Location = new Point(654, 79);
-            txtUsuarioLogin.Margin = new Padding(6);
-            txtUsuarioLogin.Name = "txtUsuarioLogin";
-            txtUsuarioLogin.Size = new Size(182, 39);
-            txtUsuarioLogin.TabIndex = 15;
-            // 
-            // lblusername
-            // 
-            lblusername.AutoSize = true;
-            lblusername.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblusername.Location = new Point(654, 41);
-            lblusername.Margin = new Padding(6, 0, 6, 0);
-            lblusername.Name = "lblusername";
-            lblusername.Size = new Size(139, 32);
-            lblusername.TabIndex = 7;
-            lblusername.Text = "User Name";
-            // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(444, 79);
-            txtApellido.Margin = new Padding(6);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(182, 39);
-            txtApellido.TabIndex = 10;
-            // 
-            // lblapellido
-            // 
-            lblapellido.AutoSize = true;
-            lblapellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblapellido.Location = new Point(444, 41);
-            lblapellido.Margin = new Padding(6, 0, 6, 0);
-            lblapellido.Name = "lblapellido";
-            lblapellido.Size = new Size(205, 32);
-            lblapellido.TabIndex = 5;
-            lblapellido.Text = "Apellido Usuario";
-            // 
-            // txtcorreo
-            // 
-            txtcorreo.Location = new Point(1072, 79);
-            txtcorreo.Margin = new Padding(6);
-            txtcorreo.Name = "txtcorreo";
-            txtcorreo.Size = new Size(182, 39);
-            txtcorreo.TabIndex = 25;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(1072, 41);
-            label2.Margin = new Padding(6, 0, 6, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(64, 32);
-            label2.TabIndex = 11;
-            label2.Text = "Mail";
-            // 
-            // txtcontraseña
-            // 
-            txtcontraseña.Location = new Point(862, 79);
-            txtcontraseña.Margin = new Padding(6);
-            txtcontraseña.Name = "txtcontraseña";
-            txtcontraseña.Size = new Size(182, 39);
-            txtcontraseña.TabIndex = 20;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(862, 41);
-            label3.Margin = new Padding(6, 0, 6, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(122, 32);
-            label3.TabIndex = 9;
-            label3.Text = "Password";
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(234, 830);
-            btnGuardar.Margin = new Padding(6);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(139, 49);
-            btnGuardar.TabIndex = 35;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(444, 830);
-            btnEliminar.Margin = new Padding(6);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(139, 49);
-            btnEliminar.TabIndex = 40;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(654, 830);
-            btnCancelar.Margin = new Padding(6);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(139, 49);
-            btnCancelar.TabIndex = 45;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new Point(24, 830);
-            btnNuevo.Margin = new Padding(6);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(139, 49);
-            btnNuevo.TabIndex = 30;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(1115, 830);
-            btnSalir.Margin = new Padding(6);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(139, 49);
-            btnSalir.TabIndex = 46;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // IdUsuario
             // 
@@ -296,11 +125,164 @@
             mail.ReadOnly = true;
             mail.Width = 200;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Cod. Usuario";
+            // 
+            // txtcodusuario
+            // 
+            txtcodusuario.Location = new Point(12, 37);
+            txtcodusuario.Name = "txtcodusuario";
+            txtcodusuario.ReadOnly = true;
+            txtcodusuario.Size = new Size(100, 23);
+            txtcodusuario.TabIndex = 0;
+            // 
+            // txtnombre
+            // 
+            txtnombre.Location = new Point(125, 37);
+            txtnombre.Name = "txtnombre";
+            txtnombre.Size = new Size(100, 23);
+            txtnombre.TabIndex = 5;
+            // 
+            // lblnombre
+            // 
+            lblnombre.AutoSize = true;
+            lblnombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblnombre.Location = new Point(125, 19);
+            lblnombre.Name = "lblnombre";
+            lblnombre.Size = new Size(98, 15);
+            lblnombre.TabIndex = 3;
+            lblnombre.Text = "Nombre Usuario";
+            // 
+            // txtUsuarioLogin
+            // 
+            txtUsuarioLogin.Location = new Point(352, 37);
+            txtUsuarioLogin.Name = "txtUsuarioLogin";
+            txtUsuarioLogin.Size = new Size(100, 23);
+            txtUsuarioLogin.TabIndex = 15;
+            // 
+            // lblusername
+            // 
+            lblusername.AutoSize = true;
+            lblusername.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblusername.Location = new Point(352, 19);
+            lblusername.Name = "lblusername";
+            lblusername.Size = new Size(69, 15);
+            lblusername.TabIndex = 7;
+            lblusername.Text = "User Name";
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(239, 37);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(100, 23);
+            txtApellido.TabIndex = 10;
+            // 
+            // lblapellido
+            // 
+            lblapellido.AutoSize = true;
+            lblapellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblapellido.Location = new Point(239, 19);
+            lblapellido.Name = "lblapellido";
+            lblapellido.Size = new Size(97, 15);
+            lblapellido.TabIndex = 5;
+            lblapellido.Text = "Apellido Usuario";
+            // 
+            // txtcorreo
+            // 
+            txtcorreo.Location = new Point(577, 37);
+            txtcorreo.Name = "txtcorreo";
+            txtcorreo.Size = new Size(100, 23);
+            txtcorreo.TabIndex = 25;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(577, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(30, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Mail";
+            // 
+            // txtcontraseña
+            // 
+            txtcontraseña.Location = new Point(464, 37);
+            txtcontraseña.Name = "txtcontraseña";
+            txtcontraseña.Size = new Size(100, 23);
+            txtcontraseña.TabIndex = 20;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(464, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Password";
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(126, 389);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 35;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(239, 389);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 40;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(352, 389);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 45;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(13, 389);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 30;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(600, 389);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 46;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // Usuario_ABM
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1270, 932);
+            ClientSize = new Size(689, 421);
             Controls.Add(btnSalir);
             Controls.Add(btnNuevo);
             Controls.Add(btnCancelar);
@@ -319,7 +301,6 @@
             Controls.Add(txtcodusuario);
             Controls.Add(label1);
             Controls.Add(dtgUsuarios);
-            Margin = new Padding(6);
             Name = "Usuario_ABM";
             Text = "Registro de Usuarios";
             Load += Usuario_ABM_Load;
